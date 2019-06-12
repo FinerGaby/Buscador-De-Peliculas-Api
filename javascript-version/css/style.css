@@ -1,0 +1,94 @@
+body {
+    background: url('/image/body.jpg') center no-repeat;
+    text-align: left;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+.container {
+  text-align: center;
+  margin: auto;
+  width: 55%;
+  margin-top: 4%;
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 25px 33px black;
+  border-bottom: 7px solid #38bd38;
+}
+
+.logo-escrito {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin: auto;
+  width: 60%;
+  color: #38bd38;
+}
+
+.search {
+  padding: 20px;
+  display: flex;
+}
+
+.search input {
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+  width: 70%;
+  color: #000000;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#estilo-boton {
+  padding: 8px;
+  background: #38bd38;
+  border: 1px solid #38bd38;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 2px;
+  width: 20%;
+}
+
+
+#renderizado-datos {
+    background: #ffffff;
+    padding: 30px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  
+  .resultado-api {
+    display: flex;
+  }
+  
+  .imagen-portada img {
+    width: 288px;
+  }
+  
+  .datos-api {
+    margin-left: 20px;
+  }
+  
+  .datos-api h2 {
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #38bd38;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .datos-api2, .datos-api2 h1 {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+
+.datos-api2 span {
+  font-weight: bold;
+  line-height: 22px;
+  color: green;
+}
+  
