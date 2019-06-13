@@ -1,5 +1,5 @@
 body {
-    background: url('/image/body.jpg') center no-repeat;
+    background: url('../image/body.jpg') center no-repeat;
     text-align: left;
     margin: auto;
     font-family: 'Open Sans', sans-serif;

@@ -31,40 +31,57 @@ function getApiSearch() {
 
         // Si encontro la pelicula renderizo datos
         } else {
+            // destructuring
+            const { poster_path, title, overview, vote_average, vote_count, release_date } = filtradoSearch;
 
-        document.getElementById("renderizado-datos")
-        .innerHTML = `
-        <style>
-        body::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            filter: opacity(.1) grayscale(100%) contrast(130%);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            background: url(https://image.tmdb.org/t/p/w500${filtradoSearch.poster_path});
-        }
-        </style>
-        <div class="resultado-api">
-            <div class="imagen-portada"><img src="https://image.tmdb.org/t/p/w500${filtradoSearch.poster_path}" /></div>
-            <div class="datos-api"><h2>${filtradoSearch.title}</h2>
-            <div class="datos-api2"><h1>${filtradoSearch.overview}</h1>
-                  <span>
-                  Estrellas: ${filtradoSearch.vote_average}<br />
-                  Año: ${filtradoSearch.release_date}<br />
-                  Votos: ${filtradoSearch.vote_count}<br />
-                  </span>
+            document.getElementById("renderizado-datos")
+            .innerHTML = `
+            <style>
+            body::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                filter: opacity(.1) grayscale(100%) contrast(130%);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background: url(https://image.tmdb.org/t/p/w500${poster_path});
+            }
+            </style>
+            <div class="resultado-api">
+                <div class="imagen-portada"><img src="https://image.tmdb.org/t/p/w500${poster_path}" /></div>
+                <div class="datos-api"><h2>${title}</h2>
+                <div class="datos-api2"><h1>${overview}</h1>
+                      <span>
+                      <div id="estrellas"></div>
+                      Estrellas: ${vote_average}<br />
+                      Año: ${release_date}<br />
+                      Votos: ${vote_count}<br />
+                      </span>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
-        `;
+            `;
 
         }
+
+    // function para crear estrellas
+    function starRanking() {
+        // redondear el numero que me llega
+        const star = Math.round(`${filtradoSearch.vote_average}`)
+        var text = "";
+        
+        // loop
+        for (i = 0; i < star; i++) {
+            text += `<i class="fas fa-star"></i>`;
+         }
+        document.getElementById("estrellas").innerHTML = text;
+    }
+    starRanking();
 
     // prueba de otro fetch
     console.log(`test ${filtradoSearch.id}`)
