@@ -5,7 +5,7 @@ dev
 ```
 
   - Version Javascript
-  - Version 2 con React JS ( desarrollo )
+  - Version 2 con React JS
   - Version 3 con React JS & Redux ( desarrollo )
 
 Diferentes tecnologias usadas para consumir una API

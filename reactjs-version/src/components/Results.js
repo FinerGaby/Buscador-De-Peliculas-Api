@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRanking from './StarRanking';
 
 const Results = ({dataResults, hideText}) => {
 
@@ -10,11 +11,12 @@ const Results = ({dataResults, hideText}) => {
            
                 {hideText ? 
                 <React.Fragment>
-                <div class="imagen-portada"><img src={image} alt={image}/></div>
+                   
+                <div className="imagen-portada"><img src={image} alt={image}/></div>
                     <div className="datos-api"><h2>{title}</h2>
                     <div className="datos-api2"><h1>{overview}</h1>
                       <span>
-                      Estrellas: {vote_average}<br />
+                      Estrellas:  <StarRanking ranking={vote_average} /><br />
                       Año: {release_date}<br />
                       Votos: {vote_count}<br />
                       </span>  
