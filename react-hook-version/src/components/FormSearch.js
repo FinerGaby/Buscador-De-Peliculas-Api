@@ -62,7 +62,7 @@ const FormSearch = ({getDatosResults}) => {
 
 
     return (
-        <div>
+       <React.Fragment>
             {err ? <Error err={err} /> : null  }
             <form className="search" onSubmit={handleSubmit}>
                     <input 
@@ -75,7 +75,7 @@ const FormSearch = ({getDatosResults}) => {
                         />
                         <button type="submit" className="estilo-boton">Buscar</button>
                     </form>
-        </div>
+        </React.Fragment>
     );
 };
 

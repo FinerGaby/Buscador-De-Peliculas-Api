@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormSearch from './FormSearch';
+import Header from './Header';
 const Results = React.lazy(() => import('./Results'));
 
 
@@ -11,27 +12,27 @@ const ContainerApp = () => {
     let getDatosResults 
 
     getDatosResults = datos => {
-        console.log(datos)
         setData(datos);
-    }
-    
-    console.log(data)
+    }    
 
     let ResultsData
     if (data === false ) {
-        ResultsData = <div>Ingrese su busqueda</div>
+        ResultsData = <div>Ingrese su busqueda   <i class="fas fa-circle-notch fa-spin"></i></div>
     } else {
     ResultsData = 
-    <React.Suspense fallback={'cargando'}>
+    <div>
+    <React.Suspense fallback={'<i class="fas fa-spinner fa-spin"></i>'}>
     <Results data={data} /> 
     </React.Suspense>
+    </div>
     }
 
     return (
-       <React.Fragment>
-           <FormSearch getDatosResults={getDatosResults} />
-           {ResultsData}
-       </React.Fragment>
+        <section className="container">
+            <Header />
+            <FormSearch getDatosResults={getDatosResults} />
+            {ResultsData}     
+       </section>
     );
 };
 
