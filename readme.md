@@ -5,9 +5,9 @@ dev
 ```
 
   - Version Javascript
-  - Version 2 con React JS
-  - Version 3 con React JS & Redux ( desarrollo )
+  - Version 2 con React JS (State)
+  - Version 3 con React JS & Hook
 
 Diferentes tecnologias usadas para consumir una API
 
-[![N|Solid](https://i.imgur.com/dFATbxK.png)](https://#.com/)
+[![N|Solid](https://i.imgur.com/atYwIp6.png)](https://#.com/)

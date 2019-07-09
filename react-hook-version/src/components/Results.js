@@ -2,11 +2,11 @@ import React from 'react';
 import StarRanking from './StarRanking';
 
 const Results = ({data}) => {
-    
+      
     const { poster_path, title, overview, vote_average, vote_count, release_date } = data;
     const image = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
-    return (
+return (
        <div className="resultado-api"> 
            
                 <React.Fragment>

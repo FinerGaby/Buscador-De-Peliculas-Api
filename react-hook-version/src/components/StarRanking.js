@@ -2,7 +2,7 @@ import React from 'react';
 
 const StarRanking = ({ ranking }) => {
 
-    console.log(ranking)
+    //console.log(ranking)
     const star = Math.round(`${ranking}`)
 
     

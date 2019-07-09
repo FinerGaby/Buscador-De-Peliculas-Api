@@ -15,11 +15,11 @@ margin-top: 4%;
 background: #ffffff;
 padding: 20px;
 margin-bottom: 20px;
-border-bottom: 7px solid #38bd38;
+border-bottom: 7px solid #e19277;
 }
 
 .container i {
-  color: #b1cf3a;
+  color: #d18a73;
 }
 
 .logo-escrito {
@@ -28,7 +28,7 @@ font-weight: bold;
 margin-bottom: 20px;
 margin: auto;
 width: auto;
-color: #38bd38;
+color: #dd9076;
 }
 
 .search {
@@ -47,8 +47,8 @@ margin-right: 10px;
 
 .estilo-boton {
 padding: 8px;
-background: #38bd38;
-border: 1px solid #38bd38;
+background: #283648;
+border: 1px solid #263548;
 color: #ffffff;
 font-weight: bold;
 border-radius: 2px;
@@ -81,7 +81,7 @@ width: 20%;
   margin: auto;
   margin-bottom: 10px;
   font-size: 22px;
-  color: #38bd38;
+  color: #e09277;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -94,7 +94,7 @@ width: 20%;
 .datos-api2 span {
 font-weight: bold;
 line-height: 22px;
-color: green;
+color: #293648;
 }
 
 .alerta {
