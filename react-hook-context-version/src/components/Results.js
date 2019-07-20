@@ -1,11 +1,12 @@
 import React from 'react';
 
-const ContextApi = () => {
+const Results = () => {
+
     return (
         <div>
-            
+            resultad
         </div>
     );
 };
 
-export default ContextApi;
+export default Results;
