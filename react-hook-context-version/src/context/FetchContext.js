@@ -3,27 +3,60 @@ import React, { useState } from 'react'
 const FetchContext = React.createContext();
 export const FetchConsumer = FetchContext.Consumer;
 
-const FetchProvider = () => {
+const FetchProvider = (props) => {
 
-    const [data, setData] = useState('test')
+    const [data, setData] = useState(false)
+    const [err, setErr] = useState(false);
 
     let handleSubmit;
 
-    handleSubmit = (values) => {
+    handleSubmit = async (search) => {
+        //console.log('desde handlesubmit' + search);
 
-        console.log(values);
-        setData(values);
-        console.log(data);
+        // validar que todos los campos esten llenos si no la pelicula no se encontro
+        if(search === '' ) {
+          setErr('Error usted no escribio nada')
+           
+           // detener la ejecución
+           return;
+        }
+       
+       // realizo el fetch para obtener la api con el resultado
+       const keyApi = `1e6296feeb7565b54f1f8ea079f7e70e`
+       const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&language=es&query=${search}`;
+
+       // async await
+       const response = await fetch(apiUrl);
+       const data = await response.json();
+
+       //filtro el primer array para obtener la pelicula mas cercana que encontro
+       const filterData = data.results[0];
+
+       if (filterData === undefined) {
+           setErr('La pelicula no se encontro')
+           return
+           
+       } else {
+
+           //paso los datos del estado para obtenerlos en ContainerAPP
+           setData(filterData)
+
+           // Vuelvo al estado inicial 
+           setErr(false)
+       }
+
     }
 
     return (
+
       <FetchContext.Provider
         value={{
             data: data,
-            handleSubmit: handleSubmit
+            handleSubmit: handleSubmit,
+            err: err
         }}
       >
-       {this.props.children}
+       {props.children}
       </FetchContext.Provider>
     );
 };

@@ -19,9 +19,12 @@ const FormSearch = () => {
          <React.Fragment>
             <FetchConsumer>
             {(value) => {
-                console.log(value);
+              const {handleSubmit} = value
               return (
-            <form className="search">
+            <form className="search" onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSubmit(search)
+                }}>
                     <input 
                         type="text"
                         className="search-input"
@@ -33,7 +36,7 @@ const FormSearch = () => {
                         <button type="submit" className="estilo-boton">Buscar</button>
                     </form>
                     )
-                 }};
+                 }}
             </FetchConsumer>
         </React.Fragment>
     );
