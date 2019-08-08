@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { FetchConsumer } from '../context/FetchContext';
+import Error from './Error';
 
 const FormSearch = () => {
 
@@ -19,8 +20,10 @@ const FormSearch = () => {
          <React.Fragment>
             <FetchConsumer>
             {(value) => {
-              const {handleSubmit} = value
+              const {handleSubmit, err} = value
               return (
+            <React.Fragment>      
+            {err ? <Error err={err} /> : null  }
             <form className="search" onSubmit={(e) => {
                     e.preventDefault();
                     handleSubmit(search)
@@ -35,6 +38,7 @@ const FormSearch = () => {
                         />
                         <button type="submit" className="estilo-boton">Buscar</button>
                     </form>
+                    </React.Fragment>
                     )
                  }}
             </FetchConsumer>

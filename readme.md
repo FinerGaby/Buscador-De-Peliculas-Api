@@ -7,7 +7,7 @@ dev
   - Version Javascript
   - Version 2 con React JS (State)
   - Version 3 con React JS & Hook
-  - Version 4 con React JS & Hook & Context & Axios (dev)
+  - Version 4 con React JS & Hook & Context
   - Version 5 con React JS & Hook & Redux & Axios (dev)
 
 
