@@ -1,4 +1,6 @@
 import { FETCH_CUSTOMER } from './types';
+import { LOADING_CUSTOMER } from './types';
+
 
 // redux thunk 
 // al usar redux thunk en nuestro action retorna una function como callback "dispatch" para luego hacer lo que quieras
@@ -16,13 +18,22 @@ export const searchFetchApi = (search) => {
     const keyApi = `1e6296feeb7565b54f1f8ea079f7e70e`
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&language=es&query=${search}`;
  
+    //preparando el loading
+    const prueba2 = true;
+    dispatch({ type: LOADING_CUSTOMER, payload: prueba2})
+
+
     // async await
     const response = await fetch(apiUrl);
     const data = await response.json();
  
     //filtro el primer array para obtener la pelicula mas cercana que encontro
     const filterData = data.results[0];
+    dispatch({ type: FETCH_CUSTOMER, payload: filterData})
 
-	dispatch({ type: FETCH_CUSTOMER, payload: filterData})
+
+    const prueba23 = false;
+    dispatch({ type: LOADING_CUSTOMER, payload: prueba23})
+
     }
 };

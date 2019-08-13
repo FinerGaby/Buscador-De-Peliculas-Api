@@ -11,7 +11,7 @@ const FormSearch = () => {
 
     //dispatch para ejecutar nuestras acciones
     const dispatch = useDispatch();
-    const fetchApi = (letras) => dispatch(searchFetchApi(letras))
+    const fetchApi = (letras, loading) => dispatch(searchFetchApi(letras, loading))
 
 
     handleChange = e => {
@@ -24,8 +24,9 @@ const FormSearch = () => {
         e.preventDefault();
 
         const letras = search;
+        const loading = true;
      
-        fetchApi(letras);
+        fetchApi(letras, loading);
         
     }
 

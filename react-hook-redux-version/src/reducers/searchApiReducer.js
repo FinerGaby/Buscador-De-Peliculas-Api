@@ -1,8 +1,12 @@
 import { FETCH_CUSTOMER } from '../actions/types';
+import { LOADING_CUSTOMER } from '../actions/types';
+
+
 
 
 const initialState = {
-    data: []
+    data: false,
+    loading: false
 }
 
 export default function(state = initialState, action) {
@@ -13,6 +17,11 @@ export default function(state = initialState, action) {
                   ...state,
                   data: action.payload
              }
+             case LOADING_CUSTOMER:
+               return {
+                    ...state,
+                    loading: action.payload,
+               }
         default:
              return state;
    }
