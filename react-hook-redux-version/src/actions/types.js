@@ -1,4 +1,6 @@
 export const FETCH_CUSTOMER = 'FETCH_CUSTOMER';
 export const LOADING_CUSTOMER = 'LOADING_CUSTOMER';
+export const ERROR_CUSTOMER = 'ERROR_CUSTOMER';
+
 
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { searchFetchApi } from './../actions/searchFetchApi';
+import Error from './Error';
 
 const FormSearch = () => {
 
@@ -11,7 +13,10 @@ const FormSearch = () => {
 
     //dispatch para ejecutar nuestras acciones
     const dispatch = useDispatch();
-    const fetchApi = (letras, loading) => dispatch(searchFetchApi(letras, loading))
+    const fetchApi = (search) => dispatch(searchFetchApi(search))
+
+    // accedo al estado de error
+    const err = useSelector((state) => state.data.err)
 
 
     handleChange = e => {
@@ -23,10 +28,8 @@ const FormSearch = () => {
     handleSubmit = e => {
         e.preventDefault();
 
-        const letras = search;
-        const loading = true;
-     
-        fetchApi(letras, loading);
+        // ejecuto el action mandado el value del form
+        fetchApi(search);
         
     }
 
@@ -34,6 +37,7 @@ const FormSearch = () => {
 
     return (
             <React.Fragment>      
+            {err ? <Error err={err} /> : null  }
             <form className="search" onSubmit={handleSubmit}>
                     <input 
                         type="text"

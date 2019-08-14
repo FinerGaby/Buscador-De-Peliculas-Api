@@ -8,7 +8,7 @@ dev
   - Version 2 con React JS (State)
   - Version 3 con React JS & Hook
   - Version 4 con React JS & Hook & Context
-  - Version 5 con React JS & Hook & Redux & Axios (dev)
+  - Version 5 con React JS & Hook & Redux
 
 
 Diferentes tecnologias usadas para consumir una API

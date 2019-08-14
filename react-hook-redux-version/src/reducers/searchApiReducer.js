@@ -1,12 +1,13 @@
 import { FETCH_CUSTOMER } from '../actions/types';
 import { LOADING_CUSTOMER } from '../actions/types';
-
+import { ERROR_CUSTOMER } from '../actions/types';
 
 
 
 const initialState = {
     data: false,
-    loading: false
+    loading: false,
+    err: false
 }
 
 export default function(state = initialState, action) {
@@ -20,7 +21,12 @@ export default function(state = initialState, action) {
              case LOADING_CUSTOMER:
                return {
                     ...state,
-                    loading: action.payload,
+                    loading: action.payload
+               }
+               case ERROR_CUSTOMER:
+               return {
+                    ...state,
+                    err: action.payload
                }
         default:
              return state;
